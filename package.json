@@ -1,9 +1,9 @@
 {
   "name": "yaafloop",
   "version": "1.0.0",
+  "main": "main.js",
   "description": "Yet another animation frame loop.",
   "author": "Andrew McPherson <@ehgoodenough>",
-  "main": "main.js",
   "license": "MIT",
   "repository": {
     "type": "git",
