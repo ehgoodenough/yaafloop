@@ -1,6 +1,6 @@
 {
   "name": "yaafloop",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "main.js",
   "description": "Yet another animation frame loop.",
   "author": "Andrew McPherson <@ehgoodenough>",

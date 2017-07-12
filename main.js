@@ -1,21 +1,29 @@
 var Afloop = require("afloop")
 
-module.exports = function Yaafloop(func) {
-    return new Afloop(function(delta) {
+export default class Yaafloop {
+    constructor(func) {
+        this.func = func
 
-        // Caps the delta at one second.
-        delta = Math.min(delta, 1000)
+        this.fps = Yaafloop.fps || 60
+        this.cap = Yaafloop.cap || 1000
 
-        // Calculates the delta in
-        // diffeent units of time.
-        delta = {
-            ms: delta, // in milliseconds
-            s: delta / 1000, // in seconds
-            f: delta / (1000 / 60), // in frames
-        }
+        this.loop = new Afloop((delta) => {
+            // Cap the delta.
+            if(typeof this.cap === "number") {
+                delta = Math.min(delta, this.cap)
+            }
 
-        // Call the function
-        // with the delta.
-        func(delta)
-    })
+            // Calculate the delta in
+            // different units of time.
+            delta = {
+                ms: delta, // in milliseconds
+                s: delta / 1000, // in seconds
+                f: delta / (1000 / this.fps), // in frames
+            }
+
+            // Call the function
+            // with the delta.
+            this.func(delta)
+        })
+    }
 }
