@@ -1,4 +1,4 @@
-var Afloop = require("afloop")
+const Afloop = require("afloop")
 
 module.exports = function(func) {
     this.func = func
