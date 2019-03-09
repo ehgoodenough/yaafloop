@@ -1,5 +1,9 @@
 # Yaafloop #
 
+![npm](https://img.shields.io/npm/v/yaafloop.svg)
+![npm](https://img.shields.io/npm/dt/yaafloop.svg)
+![npm](https://img.shields.io/npm/l/yaafloop.svg)
+
 Yet another animation frame loop. Built on [Afloop](https://github.com/ehgoodenough/afloop).
 
 Just like afloop, it takes a function and loops it each and every frame. And just like afloop, the function is passed a delta, but unlike afloop, this delta includes milliseconds, seconds, and frames. How handy!
